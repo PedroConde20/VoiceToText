@@ -7,7 +7,6 @@ let startRecording = () => {
     navigator.mediaDevices.getUserMedia({ audio: true }).then((mediaStreamObject) => {
         mediaRecorder = new MediaRecorder(mediaStreamObject);
         mediaRecorder.start();
-
         mediaRecorder.ondataavailable = (ev) => {
             dataArray.push(ev.data);
         };
